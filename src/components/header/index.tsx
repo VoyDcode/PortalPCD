@@ -28,7 +28,7 @@ export default function Header() {
               height={20}
               className="text-white brightness-0 invert"
             />
-            <span className="font-medium text-base text-black">Portal PCD</span>
+            <span className="font-medium text-base text-white">Portal PCD</span>
           </Link>
           
           {/* Área do usuário e botão sair */}

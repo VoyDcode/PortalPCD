@@ -13,7 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-white">
       {/* Hero Section - Seção principal com mensagem de boas-vindas */}
       <section 
-        className="bg-gradient-to-br from-primary via-secondary to-accent text-white py-16 relative"
+        className="w-full bg-gradient-to-r from-blue-600 via-purple-500 to-fuchsia-500 text-white py-16 relative"
         aria-labelledby="hero-title"
       >
         <div className="container mx-auto px-4">
@@ -25,19 +25,18 @@ export default function Home() {
               Bem-vindo, Victor Rodrigues de Lima Lourenço ao Portal PCD!
             </p>
             <p className="text-base mb-8 opacity-90">
-              Aqui você encontra informações, serviços e recursos para
-              promover a acessibilidade e inclusão.
+              Aqui você encontra informações, serviços e recursos para promover a acessibilidade e inclusão.
             </p>
             <div className="flex gap-3">
               <Link 
                 href="/servicos" 
-                className="bg-white text-primary px-4 py-2 rounded text-sm font-medium hover:bg-opacity-90 transition-all focus:ring-2 focus:ring-white focus:outline-none"
+                className="bg-white text-blue-700 px-4 py-2 rounded text-sm font-medium hover:bg-blue-100 transition-all focus:ring-2 focus:ring-white focus:outline-none"
               >
                 Explorar Serviços
               </Link>
               <Link 
                 href="/perfil" 
-                className="border border-white text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10 transition-all focus:ring-2 focus:ring-white focus:outline-none"
+                className="bg-white/20 border border-white text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/30 transition-all focus:ring-2 focus:ring-white focus:outline-none"
               >
                 Atualizar Perfil
               </Link>
@@ -67,7 +66,7 @@ export default function Home() {
             </h2>
             <Link 
               href="/servicos" 
-              className="text-primary text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+              className="text-blue-700 text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 rounded"
             >
               Ver todos →
             </Link>
@@ -89,12 +88,11 @@ export default function Home() {
                 Serviços de Saúde e Reabilitação
               </h3>
               <p className="text-sm text-gray-600 mb-4">
-                Informações sobre centros de saúde, reabilitação e
-                tratamentos para PCDs.
+                Informações sobre centros de saúde, reabilitação e tratamentos para PCDs.
               </p>
               <Link 
                 href="/saude"
-                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 rounded"
               >
                 Saiba mais sobre serviços de saúde
               </Link>
@@ -115,12 +113,11 @@ export default function Home() {
                 Benefícios e Direitos
               </h3>
               <p className="text-sm text-gray-600 mb-4">
-                Guia sobre benefícios governamentais e direitos legais
-                para PCDs.
+                Guia sobre benefícios governamentais e direitos legais para PCDs.
               </p>
               <Link 
                 href="/beneficios"
-                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 rounded"
               >
                 Saiba mais sobre benefícios e direitos
               </Link>
@@ -141,12 +138,11 @@ export default function Home() {
                 Emprego e Profissionalização
               </h3>
               <p className="text-sm text-gray-600 mb-4">
-                Oportunidades de trabalho e capacitação profissional
-                para PCDs.
+                Oportunidades de trabalho e capacitação profissional para PCDs.
               </p>
               <Link 
                 href="/emprego"
-                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-700 focus:ring-offset-2 rounded"
               >
                 Saiba mais sobre emprego e profissionalização
               </Link>
@@ -166,12 +162,10 @@ export default function Home() {
             <div className="bg-white rounded-lg p-6">
               <h2 className="text-lg font-medium mb-3 text-gray-800">Acessibilidade Digital</h2>
               <p className="text-sm text-gray-600 mb-2">
-                A acessibilidade digital refere-se à prática de tornar os sites e aplicativos acessíveis para
-                todas as pessoas, incluindo aquelas com deficiências.
+                A acessibilidade digital refere-se à prática de tornar os sites e aplicativos acessíveis para todas as pessoas, incluindo aquelas com deficiências.
               </p>
               <p className="text-sm text-gray-600">
-                Neste portal, implementamos diversas práticas de acessibilidade, como navegação por
-                teclado, descrições de imagem, e compatibilidade com leitores de tela.
+                Neste portal, implementamos diversas práticas de acessibilidade, como navegação por teclado, descrições de imagem, e compatibilidade com leitores de tela.
               </p>
             </div>
 
@@ -179,8 +173,7 @@ export default function Home() {
             <div className="bg-white rounded-lg p-6">
               <h2 className="text-lg font-medium mb-3 text-gray-800">Direitos e Legislação</h2>
               <p className="text-sm text-gray-600 mb-2">
-                No Brasil, a Lei Brasileira de Inclusão (Lei nº 13.146/2015) garante direitos às pessoas
-                com deficiência em diversas áreas como educação, saúde e trabalho.
+                No Brasil, a Lei Brasileira de Inclusão (Lei nº 13.146/2015) garante direitos às pessoas com deficiência em diversas áreas como educação, saúde e trabalho.
               </p>
               <p className="text-sm text-gray-600">
                 Conheça mais sobre seus direitos na seção de Benefícios e Direitos do nosso portal.
