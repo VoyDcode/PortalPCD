@@ -1,103 +1,194 @@
-import Image from "next/image";
+import Link from 'next/link'
+import Image from 'next/image'
 
+/**
+ * Página Inicial do Portal PCD
+ * Contém as seguintes seções:
+ * - Hero section com mensagem de boas-vindas
+ * - Serviços em destaque
+ * - Informações sobre acessibilidade e direitos
+ */
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-white">
+      {/* Hero Section - Seção principal com mensagem de boas-vindas */}
+      <section 
+        className="bg-gradient-to-br from-primary via-secondary to-accent text-white py-16 relative"
+        aria-labelledby="hero-title"
+      >
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl">
+            <h1 id="hero-title" className="text-4xl font-bold mb-4">
+              Portal de Informação e Acessibilidade
+            </h1>
+            <p className="text-lg mb-2">
+              Bem-vindo, Victor Rodrigues de Lima Lourenço ao Portal PCD!
+            </p>
+            <p className="text-base mb-8 opacity-90">
+              Aqui você encontra informações, serviços e recursos para
+              promover a acessibilidade e inclusão.
+            </p>
+            <div className="flex gap-3">
+              <Link 
+                href="/servicos" 
+                className="bg-white text-primary px-4 py-2 rounded text-sm font-medium hover:bg-opacity-90 transition-all focus:ring-2 focus:ring-white focus:outline-none"
+              >
+                Explorar Serviços
+              </Link>
+              <Link 
+                href="/perfil" 
+                className="border border-white text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/10 transition-all focus:ring-2 focus:ring-white focus:outline-none"
+              >
+                Atualizar Perfil
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className="absolute right-0 bottom-0 opacity-10" aria-hidden="true">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/accessibility-icon.svg"
+            alt=""
+            width={200}
+            height={200}
+            className="brightness-0 invert"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        </div>
+      </section>
+
+      {/* Seção de Serviços em Destaque */}
+      <section 
+        className="py-8"
+        aria-labelledby="services-title"
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex justify-between items-center mb-6">
+            <h2 id="services-title" className="text-xl font-semibold text-gray-800">
+              Serviços em Destaque
+            </h2>
+            <Link 
+              href="/servicos" 
+              className="text-primary text-sm hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+            >
+              Ver todos →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card de Saúde */}
+            <div className="bg-rose-50 rounded-lg p-6">
+              <div className="w-8 h-8 mb-4" aria-hidden="true">
+                <Image
+                  src="/health-icon.svg"
+                  alt=""
+                  width={32}
+                  height={32}
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-lg font-medium mb-2 text-gray-800">
+                Serviços de Saúde e Reabilitação
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Informações sobre centros de saúde, reabilitação e
+                tratamentos para PCDs.
+              </p>
+              <Link 
+                href="/saude"
+                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+              >
+                Saiba mais sobre serviços de saúde
+              </Link>
+            </div>
+
+            {/* Card de Benefícios */}
+            <div className="bg-blue-50 rounded-lg p-6">
+              <div className="w-8 h-8 mb-4" aria-hidden="true">
+                <Image
+                  src="/benefits-icon.svg"
+                  alt=""
+                  width={32}
+                  height={32}
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-lg font-medium mb-2 text-gray-800">
+                Benefícios e Direitos
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Guia sobre benefícios governamentais e direitos legais
+                para PCDs.
+              </p>
+              <Link 
+                href="/beneficios"
+                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+              >
+                Saiba mais sobre benefícios e direitos
+              </Link>
+            </div>
+
+            {/* Card de Emprego */}
+            <div className="bg-green-50 rounded-lg p-6">
+              <div className="w-8 h-8 mb-4" aria-hidden="true">
+                <Image
+                  src="/job-icon.svg"
+                  alt=""
+                  width={32}
+                  height={32}
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-lg font-medium mb-2 text-gray-800">
+                Emprego e Profissionalização
+              </h3>
+              <p className="text-sm text-gray-600 mb-4">
+                Oportunidades de trabalho e capacitação profissional
+                para PCDs.
+              </p>
+              <Link 
+                href="/emprego"
+                className="text-sm text-gray-700 hover:underline focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+              >
+                Saiba mais sobre emprego e profissionalização
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Seção de Informações Adicionais */}
+      <section 
+        className="py-8 bg-gray-50"
+        aria-label="Informações adicionais"
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card de Acessibilidade Digital */}
+            <div className="bg-white rounded-lg p-6">
+              <h2 className="text-lg font-medium mb-3 text-gray-800">Acessibilidade Digital</h2>
+              <p className="text-sm text-gray-600 mb-2">
+                A acessibilidade digital refere-se à prática de tornar os sites e aplicativos acessíveis para
+                todas as pessoas, incluindo aquelas com deficiências.
+              </p>
+              <p className="text-sm text-gray-600">
+                Neste portal, implementamos diversas práticas de acessibilidade, como navegação por
+                teclado, descrições de imagem, e compatibilidade com leitores de tela.
+              </p>
+            </div>
+
+            {/* Card de Direitos e Legislação */}
+            <div className="bg-white rounded-lg p-6">
+              <h2 className="text-lg font-medium mb-3 text-gray-800">Direitos e Legislação</h2>
+              <p className="text-sm text-gray-600 mb-2">
+                No Brasil, a Lei Brasileira de Inclusão (Lei nº 13.146/2015) garante direitos às pessoas
+                com deficiência em diversas áreas como educação, saúde e trabalho.
+              </p>
+              <p className="text-sm text-gray-600">
+                Conheça mais sobre seus direitos na seção de Benefícios e Direitos do nosso portal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
 }
