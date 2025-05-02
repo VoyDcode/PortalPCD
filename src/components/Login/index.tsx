@@ -14,6 +14,11 @@ export default function index() {
   
   useEffect(() => {
 
+    const user = localStorage.getItem("usuarioLogado");
+    if (user) {
+      navigate.push("/");
+    }
+
     if(!localStorage.getItem("ListaContas")){
       localStorage.setItem("ListaContas", JSON.stringify(listaDeContas));
     }
@@ -36,7 +41,7 @@ export default function index() {
 
     if (ContaValida) {
       alert("login realizado com sucesso");
-      navigate.push("/");
+      window.location.reload();
     } else {
       alert("Usuário ou senha inválidos!");
     }
