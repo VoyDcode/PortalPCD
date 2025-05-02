@@ -1,7 +1,9 @@
 'use client'
-
+import { useEffect} from 'react';
 import Link from 'next/link'
 import Image from 'next/image'
+import { useState } from "react";
+import { ContaType } from '@/types/ContaType';
 
 /**
  * Componente Header
@@ -11,6 +13,21 @@ import Image from 'next/image'
  * - Botão de sair
  */
 export default function Header() {
+
+  const [Logado, setLogado] = useState<ContaType | null>(null);
+
+  useEffect(() => {
+    const usuario = localStorage.getItem("usuarioLogado");
+    if (usuario) {
+      setLogado(JSON.parse(usuario));
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("usuarioLogado");
+    setLogado(null);
+  };
+
   return (
     <header className="bg-primary text-white py-2" role="banner">
       <div className="container mx-auto px-4">
@@ -34,17 +51,36 @@ export default function Header() {
           {/* Área do usuário e botão sair */}
 
           <div className="flex items-center gap-3">
-            <span className="text-sm" role="status">
-              Olá, Victor Rodrigues de Lima Lourenço
-            </span>
-            <button 
-              className="bg-white/10 px-4 py-1.5 rounded hover:bg-white/20 transition-all focus:ring-2 focus:ring-white/50 focus:outline-none text-sm font-medium"
-              aria-label="Sair do sistema"
-              onClick={() => {}}
-            >
-              SAIR
-            </button>
-          </div>
+  {Logado ? (
+    <>
+      <span className="text-sm" role="status">
+        Olá, {Logado.nome}
+      </span>
+      <button 
+        className="bg-white/10 px-4 py-1.5 rounded hover:bg-white/20 transition-all focus:ring-2 focus:ring-white/50 focus:outline-none text-sm font-medium"
+        aria-label="Sair do sistema"
+        onClick={handleLogout}
+      >
+        SAIR
+      </button>
+    </>
+  ) : (
+    <>
+      <Link
+        href="/login"
+        className="text-white bg-white/10 px-4 py-1.5 rounded hover:bg-white/20 transition-all focus:ring-2 focus:ring-white/50 focus:outline-none text-sm font-medium"
+      >
+        Login
+      </Link>
+      <Link
+        href="/cadastro"
+        className="text-white bg-white/10 px-4 py-1.5 rounded hover:bg-white/20 transition-all focus:ring-2 focus:ring-white/50 focus:outline-none text-sm font-medium"
+      >
+        Cadastro
+      </Link>
+    </>
+  )}
+</div>
         </div>
       </div>
     </header>

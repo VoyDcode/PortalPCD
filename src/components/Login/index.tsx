@@ -27,11 +27,13 @@ export default function index() {
   const handleChangeSenha = (e: React.ChangeEvent<HTMLInputElement>) => setSenha(e.target.value);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     const ContaValida = ListaDecontas?.find(
       (u) => u.email === email && u.senha === senha
     );
   
+    localStorage.setItem("usuarioLogado", JSON.stringify(ContaValida));
+
     if (ContaValida) {
       alert("login realizado com sucesso");
       navigate.push("/");
