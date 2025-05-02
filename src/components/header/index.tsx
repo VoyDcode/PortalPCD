@@ -34,8 +34,6 @@ export default function Header() {
           {/* Área do usuário e botão sair */}
 
           <div className="flex items-center gap-3">
-            <Link href='/login'className="bg-white/10 px-4 py-1.5 rounded hover:bg-white/20 transition-all focus:ring-2 focus:ring-white/50 focus:outline-none text-sm font-medium no-underline text-decoration:none text-white">
-            Login</Link>
             <span className="text-sm" role="status">
               Olá, Victor Rodrigues de Lima Lourenço
             </span>
