@@ -32,6 +32,7 @@ export default function Header() {
           </Link>
           
           {/* Área do usuário e botão sair */}
+
           <div className="flex items-center gap-3">
             <span className="text-sm" role="status">
               Olá, Victor Rodrigues de Lima Lourenço
