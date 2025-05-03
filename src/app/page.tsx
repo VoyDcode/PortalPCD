@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Boasvindas from '@/components/Boasvindas/boasvindas'
 
 /**
  * Página Inicial do Portal PCD
@@ -12,47 +13,9 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section - Seção principal com mensagem de boas-vindas */}
-      <section 
-        className="w-full bg-gradient-to-r from-blue-600 via-purple-500 to-fuchsia-500 text-white py-16 relative"
-        aria-labelledby="hero-title"
-      >
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl">
-            <h1 id="hero-title" className="text-4xl font-bold mb-4">
-              Portal de Informação e Acessibilidade
-            </h1>
-            <p className="text-lg mb-2">
-              Bem-vindo, Victor Rodrigues de Lima Lourenço ao Portal PCD!
-            </p>
-            <p className="text-base mb-8 opacity-90">
-              Aqui você encontra informações, serviços e recursos para promover a acessibilidade e inclusão.
-            </p>
-            <div className="flex gap-3">
-              <Link 
-                href="/servicos" 
-                className="bg-white text-blue-700 px-4 py-2 rounded text-sm font-medium hover:bg-blue-100 transition-all focus:ring-2 focus:ring-white focus:outline-none"
-              >
-                Explorar Serviços
-              </Link>
-              <Link 
-                href="/perfil" 
-                className="bg-white/20 border border-white text-white px-4 py-2 rounded text-sm font-medium hover:bg-white/30 transition-all focus:ring-2 focus:ring-white focus:outline-none"
-              >
-                Atualizar Perfil
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="absolute right-0 bottom-0 opacity-10" aria-hidden="true">
-          <Image
-            src="/accessibility-icon.svg"
-            alt=""
-            width={200}
-            height={200}
-            className="brightness-0 invert"
-          />
-        </div>
-      </section>
+     
+          <Boasvindas/>
+    
 
       {/* Seção de Serviços em Destaque */}
       <section 

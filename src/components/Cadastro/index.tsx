@@ -46,7 +46,7 @@ export default function index() {
     localStorage.setItem("ListaContas", JSON.stringify(novaListaDeContas));
     localStorage.setItem("usuarioLogado", JSON.stringify(novaConta));
     alert("Cadastro realizado com sucesso!");
-    navigate.push("/"); 
+    window.location.reload();
   };
   return (
     <section className="flex flex-col items-center justify-center min-h-[80vh]">

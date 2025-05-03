@@ -26,6 +26,7 @@ export default function Header() {
   const handleLogout = () => {
     localStorage.removeItem("usuarioLogado");
     setLogado(null);
+    window.location.reload();
   };
 
   return (
